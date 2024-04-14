@@ -1,1 +1,136 @@
+<script>
+let a = 100,
+b = 100,
+ClearChild = function() {
+    var a = arguments.length,
+    c;
+    while (a--) {
+        try {
+            c = arguments[a];
+            c.parentNode.removeChild(c);
+            c = null
+        } catch(b) {}
+    }
+},
+$ = function(a) {
+    return document.getElementById(a)
+},
+$n = function(a) {
+    return document.createElement(a)
+},
+NewEle = function(h, b, d, a, e, f, g, c) {
+    g = $n(b);
+    h && (g.id = h);
+    d && (g.style.cssText = d);
+    if (a) {
+        for (c in a) {
+            g[c] = a[c]
+        }
+    }
+    if (f) {
+        for (c in f) {
+            g.setAttribute(c, f[c])
+        }
+    }
+    e && e.appendChild(g);
+    return g
+},
+SmallA = function() {
+	if ( a > 0 ) {
+		a -= 1;
+		b += 1;
+		$('SandA').innerHTML = '沙堆A：' + a + '千克';
+		$('SandB').innerHTML = '沙堆B：' + b + '千克'
+	}
+},
+SmallB = function() {
+	if ( b > 0 ) {
+		a += 1;
+		b -= 1;
+		$('SandA').innerHTML = '沙堆A：' + a + '千克';
+		$('SandB').innerHTML = '沙堆B：' + b + '千克'
+	}
+},
+MiddleA = function() {
+	if ( a > 4 ) {
+		a -= 5;
+		b += 5;
+		$('SandA').innerHTML = '沙堆A：' + a + '千克';
+		$('SandB').innerHTML = '沙堆B：' + b + '千克'
+	}
+},
+MiddleB = function() {
+	if ( b > 4 ) {
+		a += 5;
+		b -= 5;
+		$('SandA').innerHTML = '沙堆A：' + a + '千克';
+		$('SandB').innerHTML = '沙堆B：' + b + '千克'
+	}
+},
+BigA = function() {
+	if ( a > 9 ) {
+		a -= 10;
+		b += 10;
+		$('SandA').innerHTML = '沙堆A：' + a + '千克';
+		$('SandB').innerHTML = '沙堆B：' + b + '千克'
+	}
+},
+BigB = function() {
+	if ( b > 9 ) {
+		a += 10;
+		b -= 10;
+		$('SandA').innerHTML = '沙堆A：' + a + '千克';
+		$('SandB').innerHTML = '沙堆B：' + b + '千克'
+	}
+},
+LargeA = function() {
+	if ( a > 19 ) {
+		a -= 20;
+		b += 20;
+		$('SandA').innerHTML = '沙堆A：' + a + '千克';
+		$('SandB').innerHTML = '沙堆B：' + b + '千克'
+	}
+},
+LargeB = function() {
+	if ( b > 19 ) {
+		a += 20;
+		b -= 20;
+		$('SandA').innerHTML = '沙堆A：' + a + '千克';
+		$('SandB').innerHTML = '沙堆B：' + b + '千克'
+	}
+},
+AllA = function() {
+	b += a;
+	a -= a;
+	$('SandA').innerHTML = '沙堆A：' + a + '千克';
+	$('SandB').innerHTML = '沙堆B：' + b + '千克'
+},
+AllB = function() {
+	a += b;
+	b -= b;
+	$('SandA').innerHTML = '沙堆A：' + a + '千克';
+	$('SandB').innerHTML = '沙堆B：' + b + '千克'
+},
+Change = function() {
+	let a1 = a,
+	b1 = b;
+	b = a1;
+	a = b1;
+	$('SandA').innerHTML = '沙堆A：' + a + '千克';
+	$('SandB').innerHTML = '沙堆B：' + b + '千克'
+};
+</script>
+<span id='SandA'>沙堆A：100千克</span><br>
+<span id='SandB'>沙堆B：100千克</span><br>
+<button onclick = "SmallA()">A小铲</button>
+<button onclick = "SmallB()">B小铲</button><br>
+<button onclick = "MiddleA()">A中铲</button>
+<button onclick = "MiddleB()">B中铲</button><br>
+<button onclick = "BigA()">A大铲</button>
+<button onclick = "BigB()">B大铲</button><br>
+<button onclick = "LargeA()">A巨铲</button>
+<button onclick = "LargeB()">B巨铲</button><br>
+<button onclick = "AllA()">A→B</button>
+<button onclick = "AllB()">B→A</button><br>
+<button onclick = "Change()">交换两者</button><br>
 <span>氵口！</span>
